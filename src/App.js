@@ -71,13 +71,25 @@ class App extends Component {
       <div style={{ "display": "flex", "flexDirection": "column" }}>
         <div style={{ "display": "flex", "justifyContent": "space-between", "background": "#123456" }}>
           <h1 style={{ "color":"#fff", "alignSelf": "center", "flexBasis": "4", "paddingTop": "20px", "paddingLeft": "30px" }}>YTSeach <Icon type={"search"} /></h1>
-          <SearchBar videos={ this.state.videos } video={ this.state.selectedVideo } onChange={ this.handleChange } handleSearch={ (video) => { this.setState({ selectedVideo: this.state.videos[video], search: false }) } } />
+          <SearchBar 
+            videos={ this.state.videos } 
+            video={ this.state.selectedVideo } 
+            onChange={ this.handleChange } 
+            handleSearch={ (video) => { this.setState({ selectedVideo: this.state.videos[video], 
+                                        search: false })
+                                      } 
+                         } />
         </div>
         <div style={{ "display": "flex" }}>
-          <VideoDetail video={ this.state.selectedVideo } />
+          <VideoDetail 
+            video={ this.state.selectedVideo } 
+            />
           <VideoList
             videos={ this.state.videos }
-            onVideoSelect={ (userSelected) => { this.setState({ selectedVideo: this.state.videos[userSelected] }) }} 
+            onVideoSelect={ (userSelected) => { this.setState({ selectedVideo: this.state.videos[userSelected] 
+                                                              }) 
+                                               }
+                          } 
             />
         </div>
       </div>
